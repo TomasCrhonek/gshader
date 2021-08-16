@@ -13,6 +13,7 @@ const (
 	DEFAULT_IMAGEFILENAME = "image.png"
 	DEFAULT_WIDTH         = 1024
 	DEFAULT_HEIGHT        = 1024
+	DEFAULT_TRACEFILENAME = "main.trace"
 )
 
 func main() {
@@ -30,7 +31,7 @@ func main() {
 	}
 
 	if *traceQ {
-		traceFile, err := os.Create("main.trace")
+		traceFile, err := os.Create(DEFAULT_TRACEFILENAME)
 		if err != nil {
 			log.Fatal(err)
 		}
