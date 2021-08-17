@@ -6,10 +6,11 @@ import (
 	"sync"
 )
 
-type shader func(int, int, int, int) color.Color
+type shader func(int, int, int, int) color.Gray
+type colorMap func(color.Gray) color.Color
 
-func computeImage(width, height int, shaderFunc shader) image.Image {
-	img := image.NewGray(image.Rect(0, 0, width, height))
+func computeImage(width, height int, shaderFunc shader, colorFunc colorMap) image.Image {
+	img := image.NewRGBA(image.Rect(0, 0, width, height))
 
 	var wg sync.WaitGroup
 
@@ -18,7 +19,7 @@ func computeImage(width, height int, shaderFunc shader) image.Image {
 	for col := 0; col < width; col++ {
 		go func(r int) {
 			for row := 0; row < height; row++ {
-				img.Set(r, row, shaderFunc(r, row, width, height))
+				img.Set(r, row, colorFunc(shaderFunc(r, row, width, height)))
 			}
 			wg.Done()
 		}(col)
