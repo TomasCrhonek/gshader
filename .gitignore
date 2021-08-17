@@ -3,6 +3,7 @@
 
 # Include
 !.gitignore
+!*.md
 !*.go
 !*.mod
 !*.sum
