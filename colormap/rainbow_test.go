@@ -7,6 +7,8 @@ import (
 
 func BenchmarkRainbow(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Rainbow(color.Gray{127})
+		for i := 0; i < 256; i++ {
+			Rainbow(color.Gray{uint8(i)})
+		}
 	}
 }
