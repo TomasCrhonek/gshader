@@ -62,7 +62,7 @@ func main() {
 	defer f.Close()
 
 	encoder := png.Encoder{CompressionLevel: png.NoCompression}
-	if err := encoder.Encode(f, computeImage(*width, *height, shader.Mandelbrot, colormap.Rainbow)); err != nil {
+	if err := encoder.Encode(f, computeImage(*width, *height, shader.Julia1, colormap.Red)); err != nil {
 		log.Fatal(err)
 	}
 }
