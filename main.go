@@ -7,6 +7,9 @@ import (
 	"log"
 	"os"
 	"runtime/trace"
+
+	"heronovo.cz/gshader/colormap"
+	"heronovo.cz/gshader/shader"
 )
 
 const (
@@ -59,7 +62,7 @@ func main() {
 	defer f.Close()
 
 	encoder := png.Encoder{CompressionLevel: png.NoCompression}
-	if err := encoder.Encode(f, computeImage(*width, *height, shaderMandelbrot, rainbow)); err != nil {
+	if err := encoder.Encode(f, computeImage(*width, *height, shader.Mandelbrot, colormap.Rainbow)); err != nil {
 		log.Fatal(err)
 	}
 }

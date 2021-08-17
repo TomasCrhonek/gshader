@@ -2,14 +2,13 @@ package main
 
 import (
 	"image"
-	"image/color"
 	"sync"
+
+	"heronovo.cz/gshader/colormap"
+	"heronovo.cz/gshader/shader"
 )
 
-type shader func(int, int, int, int) color.Gray
-type colorMap func(color.Gray) color.Color
-
-func computeImage(width, height int, shaderFunc shader, colorFunc colorMap) image.Image {
+func computeImage(width, height int, shaderFunc shader.Shader, colorFunc colormap.ColorMap) image.Image {
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
 
 	var wg sync.WaitGroup
