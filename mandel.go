@@ -5,7 +5,7 @@ import (
 	"math/cmplx"
 )
 
-func shaderMandelbrot(x int, y int, width int, height int) color.Color {
+func shaderMandelbrot(x int, y int, width int, height int) color.Gray {
 	c := complex(normalize(x, width, -2, 2), normalize(y, height, -2, 2))
 
 	const INTER = 1024
@@ -18,7 +18,6 @@ func shaderMandelbrot(x int, y int, width int, height int) color.Color {
 	}
 
 	return color.Gray{uint8((255 * iter) / INTER)}
-	// return color.Gray{uint8(255 * (iter % 2))}
 }
 
 func normalize(x int, total int, min float64, max float64) float64 {
