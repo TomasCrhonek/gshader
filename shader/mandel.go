@@ -5,7 +5,7 @@ import (
 	"math/cmplx"
 )
 
-func Mandelbrot(x int, y int, width int, height int) color.Gray {
+func Mandelbrot(x int, y int, width int, height int) color.Color {
 	c := complex(normalize(x, width, -2, 2), normalize(y, height, -2, 2))
 
 	const INTER = 1024

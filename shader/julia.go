@@ -5,7 +5,7 @@ import (
 	"math/cmplx"
 )
 
-func Julia1(x int, y int, width int, height int) color.Gray {
+func Julia1(x int, y int, width int, height int) color.Color {
 	z := complex(normalize(x, width, -2, 2), normalize(y, height, -2, 2))
 
 	const ITER = 32
@@ -20,7 +20,7 @@ func Julia1(x int, y int, width int, height int) color.Gray {
 	return color.Gray{uint8((255 * (iter)) / ITER)}
 }
 
-func Julia2(x int, y int, width int, height int) color.Gray {
+func Julia2(x int, y int, width int, height int) color.Color {
 	z := complex(normalize(x, width, -2, 2), normalize(y, height, -2, 2))
 
 	const ITER = 32

@@ -5,6 +5,6 @@ import (
 	"math/rand"
 )
 
-func RandomNoise(x int, y int, width int, height int) color.Gray {
+func RandomNoise(x int, y int, width int, height int) color.Color {
 	return color.Gray{uint8(rand.Intn(256))}
 }

@@ -2,4 +2,4 @@ package shader
 
 import "image/color"
 
-type Shader func(int, int, int, int) color.Gray
+type Shader func(int, int, int, int) color.Color
