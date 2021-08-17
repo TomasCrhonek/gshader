@@ -26,7 +26,7 @@ Usage: gshader [-h] [-t] [-x pixels] [-y pixels] [-n filename]
   -y height Image height in pixels.
   -n name   Image file name.
 
-  -l 		List avaiable shaders and colormaps.
+  -l        List avaiable shaders and colormaps.
   -s shader Select shader. List shaders with -l.
   -c color  Select colormap. List colormaps with -l.
 
