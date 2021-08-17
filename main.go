@@ -1,12 +1,12 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"image/png"
 	"log"
 	"os"
 	"runtime/trace"
-
-	flag "github.com/spf13/pflag"
 )
 
 const (
@@ -16,13 +16,25 @@ const (
 	DEFAULT_TRACEFILENAME = "main.trace"
 )
 
+const help string = `
+Usage: gshader [-h] [-t] [-x pixels] [-y pixels] [-n filename]
+
+  -x width  Image width in pixels.
+  -y height Image height in pixels.
+  -n name   Image file name.
+
+  -t        Generate trace information about performance. Use with 'go tool trace main.trace'.
+
+  -h        This help page.
+`
+
 func main() {
-	traceQ := flag.BoolP("trace", "t", false, "Trace the program for performance analysis.")
-	helpQ := flag.BoolP("help", "h", false, "This help page.")
-	imageFile := flag.StringP("name", "n", DEFAULT_IMAGEFILENAME, "Image `file` name.")
-	width := flag.IntP("width", "x", DEFAULT_WIDTH, "Image `width`.")
-	height := flag.IntP("height", "y", DEFAULT_HEIGHT, "Image `height`.")
-	flag.CommandLine.SortFlags = false
+	traceQ := flag.Bool("t", false, "")
+	helpQ := flag.Bool("h", false, "")
+	imageFile := flag.String("n", DEFAULT_IMAGEFILENAME, "")
+	width := flag.Int("x", DEFAULT_WIDTH, "")
+	height := flag.Int("y", DEFAULT_HEIGHT, "")
+	flag.Usage = func() { fmt.Println(help) }
 	flag.Parse()
 
 	if *helpQ {
