@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"heronovo.cz/gshader/colormap"
-	"heronovo.cz/gshader/shader"
+	"github.com/TomasCrhonek/gshader/colormap"
+	"github.com/TomasCrhonek/gshader/shader"
 )
 
 func BenchmarkComputeMandelbrot(b *testing.B) {

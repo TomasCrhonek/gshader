@@ -4,8 +4,8 @@ import (
 	"image"
 	"sync"
 
-	"heronovo.cz/gshader/colormap"
-	"heronovo.cz/gshader/shader"
+	"github.com/TomasCrhonek/gshader/colormap"
+	"github.com/TomasCrhonek/gshader/shader"
 )
 
 func computeImage(width, height int, shaderFunc shader.Shader, colorFunc colormap.ColorMap) image.Image {

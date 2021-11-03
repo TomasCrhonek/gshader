@@ -8,8 +8,8 @@ import (
 	"os"
 	"runtime/trace"
 
-	"heronovo.cz/gshader/colormap"
-	"heronovo.cz/gshader/shader"
+	"github.com/TomasCrhonek/gshader/colormap"
+	"github.com/TomasCrhonek/gshader/shader"
 )
 
 const (
