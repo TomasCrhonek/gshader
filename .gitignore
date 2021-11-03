@@ -2,6 +2,7 @@
 *
 
 # Include
+!LICENSE
 !.gitignore
 !*.md
 !*.go
