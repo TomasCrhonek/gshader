@@ -44,7 +44,7 @@ func main() {
 	list := flag.Bool("l", false, "")
 	shd := flag.String("s", "", "")
 	clr := flag.String("c", "", "")
-	flag.Usage = func() { fmt.Println(help) }
+	flag.Usage = func() { fmt.Print(help) }
 	flag.Parse()
 
 	if *helpQ {
