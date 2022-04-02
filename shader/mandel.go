@@ -19,7 +19,3 @@ func Mandelbrot(x int, y int, width int, height int) color.Color {
 
 	return color.Gray{uint8((255 * iter) / INTER)}
 }
-
-func normalize(x int, total int, min float64, max float64) float64 {
-	return (max-min)*float64(x)/float64(total) - max
-}
